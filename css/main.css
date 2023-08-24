@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+body{
+}
+
+header{
+	display:block;
+	clear:both;
+	background-color: #ccc;
+	/* height: 200px; */
+	background-image: linear-gradient(rgb(64, 220, 80), rgb(16, 160, 16));
+}
+
+.menu a{
+	padding: 10px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+
+
+
+#banner{
+	height: max-content;
+	font-size: 90px;
+	font-family: Garamond, sans-serif;
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	
+	transition: color, font-size, 5s, 3s;
+}
+
+#banner:hover{
+	color: rgb(243, 8, 2);
+	font-size: 200px;
+}
+
+img{
+	max-height: 20vh;
+}
+
+#portrait{
+	/* width: 20%; */
+	background-color: #ccc;
+	float: left;
+	display: block;
+	max-height: 100px;
+	overflow: hidden;
+}
+
+#portrait img:last-child {
+  display: none;
+}
+#portrait:hover img:last-child {
+  display: block;  
+}
+#portrait:hover img:first-child {
+  display: none;  
+}
+
+
+.content{
+	margin: 20px auto;
+	text-align: center;
+	animation: rotating 1s infinite alternate;
+}
+
+@keyframes rotating{
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+	
+}
+
+
+.parallax {
+	background-image: url("../images/mountain.jpg");
+	height: 300px;
+
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+
+
+.parallaxnight {
+	background-image: url("../images/mountainnight.jpg"); 
+	height: 300px;
+
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
