@@ -4,64 +4,11 @@
 		<title>Meu Pseudo Portfólio</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<style>
-			.die{
-				background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
-				border: 0px;
-				color: #000;
-				transition: color 1s;
-			}
-			.die:hover{
-				background-image: linear-gradient(165deg, #f34079 40%, #fc894d);
-			}
-			.die:active{
-				background-image: linear-gradient(185deg, #f34079 40%, #fc894d);
-				color: #fff;
-				box-shadow: 2px 2px 5px #fc894d;
-			}
-			.hline{
-				margin: 0 auto;
-				text-align: center;
-			}
-			.keyboard_number{
-				background-color: #ccc;
-				margin: 10px;
-			}
-			.keyboard_number div{
-				width: 80vw;
-				max-width: 200px;
-				margin: 0 auto;
-				background-color: #f00;
-			}
-			.keyboard_number div button{
-				padding: 3px;
-				background-color: #eee;
-				border: 1px;
-			}
-			.keyboard_number div button:hover{
-				padding: 3px;
-				background-color: #fff;
-				border: 1px;
-				cursor: pointer;
-			}
-			
-			.keyboard_number div button:active{
-				background-color: #944;
-				color: #fff;
-				box-shadow: 2px 2px 5px #fc894d;
-			}
-			#confirm{
-				margin: 0 auto;
-				
-			}
-		</style>
+		<link href="css/roller.css" rel="stylesheet"> 
 	</head>
 	<body>
-		<button class="die" id="play">1d6</button>
-		<div id="d6"></div>
-		
-		<button class="die" id="play2">2d6</button>
-		<div id="twod6"></div>
+		<button class="die" id="play">1d6</button><span class="dice_result" id="d6"></span>
+		<button class="die" id="play2">2d6</button><span class="dice_result" id="twod6"></span>
 		
 		<div id="now_step"></div>
 		<div id="all_steps"></div>
@@ -96,11 +43,13 @@
 					})
 				}
 				document.querySelector('#confirm').addEventListener('click', function(){
-					let span = document.createElement('span');
-					span.innerText = document.querySelector('#now_step').innerText;
-					document.querySelector('#all_steps').appendChild( span );
-					document.querySelector('#all_steps').innerHTML += ', ';
-					document.querySelector('#now_step').innerText = '';
+					if(document.querySelector('#now_step').innerText!=''){
+						let span = document.createElement('span');
+						span.innerText = document.querySelector('#now_step').innerText;					
+						document.querySelector('#all_steps').appendChild( span );
+						document.querySelector('#all_steps').innerHTML += ', ';
+						document.querySelector('#now_step').innerText = '';
+					}
 				})
 			}
 		</script>
