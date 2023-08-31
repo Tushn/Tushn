@@ -24,21 +24,17 @@
 				let d6 = document.getElementById('d6');
 				play.addEventListener('click', function(){
 					d6.innerText = Math.floor(Math.random()*6)+1;
-				})
-				
-				
+				})				
 				let twod6 = document.getElementById('twod6');
 				play2.addEventListener('click', function(){
 					twod6.innerText = Math.floor(Math.random()*6)+Math.floor(Math.random()*6)+2;
-				})
-				
+				})				
 				let stepBtns = document.querySelectorAll('.hline button');
 				
 				for(let iStepBtn of stepBtns){
 					iStepBtn.addEventListener("click", function(){
 						if(this.innerText != "OK")
-							document.querySelector('#now_step').innerText += this.innerText;
-						
+							document.querySelector('#now_step').innerText += this.innerText;		
 						//document.querySelector("all_steps").appendChild(  );
 					})
 				}
@@ -46,14 +42,16 @@
 					if(document.querySelector('#now_step').innerText!=''){
 						let span = document.createElement('span');
 						span.innerText = document.querySelector('#now_step').innerText;					
+						span.setAttribute('class', 'step');
 						document.querySelector('#all_steps').appendChild( span );
 						document.querySelector('#all_steps').innerHTML += ', ';
 						document.querySelector('#now_step').innerText = '';
+						span.addEventListener('click', function(){
+							//this.
+						})
 					}
 				})
 			}
-		</script>
-		
-		
+		</script>		
 	</body>
 </html>

@@ -51,11 +51,20 @@
 	color: #fff;
 	box-shadow: 2px 2px 5px #fc894d;
 }
+.step{
+	
+}
 #confirm{
 	margin: 0 auto;
 	
 }
 #now_step{
+	min-height: 10px;
+	min-width: 10px;
+	background-color: #ddd;
 }
 #all_steps{
+	min-height: 10px;
+	min-width: 10px;
+	background-color: #d0d;
 }

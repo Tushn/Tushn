@@ -1,8 +1,10 @@
 var staticCacheName = "pwa";
  
 self.addEventListener("install", function (e) {
+	console.log("eita")
   e.waitUntil(
     caches.open(staticCacheName).then(function (cache) {
+		console.log("euta")
       return cache.addAll(["/"]);
     })
   );
